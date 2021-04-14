@@ -1,17 +1,17 @@
-import React from 'react';
-import './App.css';
-import Login from './pages/Login/Login';
-import { BrowserRouter as Router, Switch, Route  } from "react-router-dom";
-import Register from './pages/Register/Register';
-import Home from './pages/Home/Home';
-import Dashboard from "./pages/Dashboard/Dashboard"
+import React from "react";
+import "./App.css";
+import Login from "./pages/Login/Login";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Register from "./pages/Register/Register";
+import Home from "./pages/Home/Home";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Switch>
-          <Route path= "/login">
+          <Route path="/login">
             <Login />
           </Route>
           <Route path="/register">
@@ -23,10 +23,9 @@ function App() {
           <Route path="/">
             <Home />
           </Route>
-        </Switch>      
+        </Switch>
       </div>
     </Router>
-    
   );
 }
 
