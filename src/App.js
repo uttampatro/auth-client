@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
-import Login from './Login';
+import Login from './pages/Login/Login';
 import { BrowserRouter as Router, Switch, Route  } from "react-router-dom";
-import Register from './Register';
-import Home from './Home';
+import Register from './pages/Register/Register';
+import Home from './pages/Home/Home';
+import Dashboard from "./pages/Dashboard/Dashboard"
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
           </Route>
           <Route path="/register">
             <Register />
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard />
           </Route>
           <Route path="/">
             <Home />

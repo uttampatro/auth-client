@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import "./Register.css"
 
@@ -11,7 +12,18 @@ function Register() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-       
+        const data = {
+            name: name,
+            email: email,
+            password: password
+        }
+        axios.post('http://localhost:5000/user/register', data)
+        .then((res) => {
+            console.log(res)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
     }
 
 

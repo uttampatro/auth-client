@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import "./Login.css";
 
@@ -6,15 +7,22 @@ function Login() {
     const [email, setEmail] = useState('')
     const [password, setpassword] = useState('')
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        const data =
+    const handleSubmit = async () => {
+        try{
+            const response = await axios.post("http://localhost:5000/user/login", {
+                email: email,
+                password: password
+            });
+            return response.data;
+        }
+        catch(err){
+            throw err;
+        }
     }
 
     return (
         <div className="login">
-            <form  className="login_form">
+            <form className="login_form">
             <h3>Login</h3>
             <div className="login_group">
                 <label>Email</label>

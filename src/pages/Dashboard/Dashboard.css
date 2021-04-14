@@ -1,0 +1,14 @@
+.dashboard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;   /*center in the page*/
+}
+
+.dashboard_button{
+    cursor: pointer;
+    border-radius: 2px;
+    height: 30px;
+    border: 1px solid;
+    margin-top: 10px;
+}

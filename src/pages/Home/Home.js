@@ -5,6 +5,7 @@ import "./Home.css"
 
 function Home() {
     const history = useHistory();
+    // const [isAuthenticated, setIsAuthenticated] = useState(true)
 
     const goToLogin = () => {
         history.push('/login')
