@@ -1,24 +1,24 @@
-import axios from 'axios';
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { login } from '../../services/service';
 import "./Login.css";
 
 function Login() {
+    const history = useHistory();
 
     const [email, setEmail] = useState('')
     const [password, setpassword] = useState('')
 
+    
     const handleSubmit = async () => {
-        try{
-            const response = await axios.post("http://localhost:5000/user/login", {
-                email: email,
-                password: password
-            });
-            return response.data;
-        }
-        catch(err){
-            throw err;
-        }
+    try {
+      await login(email, password)
+      history.push('/dashboard')
+    } catch (err) {
+      console.log(err)
+      alert("something went wrong")
     }
+  };
 
     return (
         <div className="login">

@@ -18,7 +18,7 @@ function Register() {
             password: password
         }
         axios.post('http://localhost:5000/user/register', data)
-        .then((res) => {
+        .try((res) => {
             console.log(res)
         })
         .catch((err) => {
